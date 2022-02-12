@@ -1,11 +1,11 @@
 <template>
   <nav class="top-navigation flex items-center">
     <div class="brands flex-none">
-
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
     </div>
     <div class="flex-1">
-      <a href="./" class="">
-          ACCOUNT
+      <a href="./" class="app-title">
+          {{ app.name }}
       </a>
     </div>
     <div class="flex-1">
@@ -25,6 +25,7 @@
  </div>
 
  <!-- Main Router -->
+<div class="page-overlay hidden"></div>
  <main>
   <router-view/>
  </main>
@@ -32,11 +33,17 @@
 
 <script>
 import MenuVertical from '@/components/layouts/MenuVertical.vue'
+import app from '@/config/app'
 
 export default {
   name: 'App',
   components: {
     MenuVertical
+  },
+  data() {
+    return {
+      app
+    }
   }
 }
 </script>
@@ -58,8 +65,12 @@ export default {
     .brands {
       width: $left-nav-width;
       height: 100%;
-      background: rgb(26, 21, 21);
+      background: #e5e5e5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
   }
 
   .left-navigation {
@@ -73,12 +84,4 @@ export default {
 
   }
 
-  main {
-    position: sticky;
-    margin-left: $left-nav-width;
-    margin-top: $top-nav-height;
-    height: calc(100vh - $top-nav-height);
-    overflow: auto;
-    width: calc(100% - $left-nav-width);
-  }
 </style>
