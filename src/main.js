@@ -5,7 +5,13 @@ import './assets/tailwind.css'
 
 import './assets/scss/index.scss'
 
+import appstore from './store';
+
 import router from './router'
 
+const app = createApp(App)
 
-createApp(App).use(router).mount('#app')
+app.use(appstore)
+app.use(router)
+
+app.mount('#app')

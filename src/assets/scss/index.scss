@@ -1,3 +1,16 @@
 @import "./variables";
+@import "./colors";
 @import "./sidemenu";
+@import "./buttons";
+@import "./tables";
 @import "./main";
+
+/* Input */
+
+input.form-control {
+    @apply border p-1.5 w-full;
+}
+
+label {
+    @apply block mb-1 font-bold text-base;
+}
