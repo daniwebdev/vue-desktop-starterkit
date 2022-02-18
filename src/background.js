@@ -1,6 +1,9 @@
 'use strict'
+import path from "path";
 
-import { app, protocol, BrowserWindow } from 'electron'
+// import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow } from "electron";
+
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -17,6 +20,7 @@ async function createWindow() {
     height: 600,
     frame: false,
     webPreferences: {
+      preload: path.join(__dirname,"preload.js"),
 
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
@@ -80,3 +84,4 @@ if (isDevelopment) {
     })
   }
 }
+

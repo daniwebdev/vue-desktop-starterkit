@@ -45,6 +45,7 @@
             </span>
             <input type="text">
           </div>
+  
           <div class="search-suggestion">
             <div v-for="(x, i) in [1,2,3,4,5,6,7,8]" :key="i" class="p-1 text-sm border-b search-suggestion-item">
               <a class="flex items-center" href="#">
@@ -61,6 +62,7 @@
             </div>
           </div>
         </div>
+          <!-- <div class="top-nav-divider"></div> -->
 
         <ul class="menu-container">
           <li>
@@ -82,7 +84,7 @@
 
       <div class="top-nav-divider"></div>
     
-      <div class="window-nav">
+      <div v-if="!is_browser" class="window-nav">
         <div class="window-nav-item">
           <!-- <i class="fas fa-window-maximize"></i> -->
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
@@ -91,12 +93,18 @@
           <!-- <i class="fas fa-window-minimize"></i> -->
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
         </div>
-        <div class="window-nav-item">
+        <div class="window-nav-item ">
           <!-- <i class="fas fa-times"></i> -->
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </div>
       </div>
+
+      <div v-if="is_browser" class="pr-2">
+        Logout
+      </div>
+
     </div>
+    
   </nav>
 </template>
 
@@ -104,6 +112,11 @@
 import {searchToggleSuggestion} from "@/utils/common";
 
 export default {
+  data() {
+    return {
+      is_browser: false,
+    }
+  },
   computed: {
     pageTitle() {
       return this.$store.state.title;
@@ -121,6 +134,13 @@ export default {
   },
   mounted() {
     searchToggleSuggestion();
+  },
+
+  created() {
+    // this.$store.commit('setTitle', this.$route.meta.title);
+    if(window.ipcRenderer == undefined) {
+      this.is_browser = true;
+    }
   }
 };
 </script>

@@ -26,7 +26,16 @@ export default {
     return {
       app
     }
-  }
+  },
+
+  mounted() {
+    document.querySelector('main').addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      console.log("Coordinate(X) = " + e.clientX + "<br>Coordinate(Y) = " + e.clientY);
+
+    })
+    console.log('App mounted')
+  },
 }
 </script>
 

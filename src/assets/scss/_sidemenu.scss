@@ -1,3 +1,16 @@
+.left-navigation {
+    border-right: 1px solid #e5e5e5;
+    position: fixed;
+    top: $top-nav-height;
+    left: 0;
+    width: $left-nav-width;
+    height: calc(100vh - $top-nav-height);
+    z-index: 1030;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
 .vertical-menu {
     list-style: none;
     margin: 0;
@@ -7,16 +20,17 @@
     overflow-y: auto;
     li {
         &.menu-item {
+            font-size: 11px;
+            text-transform: capitalize;
             i {
-                //icon
+                font-size: 18px;
             }
-            span {
-                font-size: 11px;
-                text-transform: capitalize;
+            a {
+                padding: 10px 0px;
             }
         }
         &.active {
-            background: #f3f3f3;
+            @apply bg-gray-200;
             .submenu {
                 display: block;
                 z-index: 1031;
@@ -57,6 +71,19 @@
                     background: #f3f3f3;
                 }
             }
+        }
+    }
+}
+
+ul.bottom-section-menu {
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        &:hover {
+            @apply bg-gray-200;
+            cursor: pointer;
         }
     }
 }
