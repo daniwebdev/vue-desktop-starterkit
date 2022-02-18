@@ -31,28 +31,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '@/assets/scss/index.scss';
   
-  .top-navigation {
-    background: white;
-    border-bottom: 1px solid #e5e5e5;
-    // padding: 10px;
-    height: $top-nav-height;
-    top: 0;
-    left: 0;
-    position: fixed;
-    right: 0;
-    z-index: 1030;
-
-    .brands {
-      width: $left-nav-width;
-      height: 100%;
-      background: #e5e5e5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-  }
 
 </style>

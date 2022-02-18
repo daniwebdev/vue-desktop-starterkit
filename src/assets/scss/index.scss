@@ -1,11 +1,23 @@
 @import "./variables";
 @import "./colors";
 @import "./sidemenu";
+@import "./topnavigation";
 @import "./buttons";
 @import "./tables";
 @import "./main";
 
+/* Body */
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
 /* Input */
+
+.fas {
+    font-weight: 500;
+}
 
 input.form-control {
     @apply border p-1.5 w-full;

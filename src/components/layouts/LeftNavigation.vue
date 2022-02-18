@@ -1,10 +1,9 @@
 <template>
   <div class="left-navigation">
     <ul class="vertical-menu" v-if="menus.length">
-      <li v-for="(menu, index) in menus" :key="index">
-        <router-link to="#" :title="menu.name">
-          <i class="fas fa-address-card"></i>
-        </router-link>
+      <li v-for="(menu, index) in menus" :key="index" class="menu-item">
+        
+        <nav-menu-item :data="menu"></nav-menu-item>
 
         <ul
           class="submenu"
@@ -26,8 +25,10 @@
 </template>
 
 <script>
+import NavMenuItem from '../menus/NavMenuItem.vue';
 
 export default {
+  components: { NavMenuItem },
   data() {
     return {
       menus: [

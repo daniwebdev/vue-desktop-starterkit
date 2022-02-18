@@ -5,5 +5,10 @@ export default createStore({
         return {
             title: "Home - Desktop",
         };
+    },
+    mutations: {
+        set_title(state, title) {
+            state.title = title
+        }
     }
 })
