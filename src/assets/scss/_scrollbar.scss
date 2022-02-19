@@ -1,0 +1,14 @@
+.scrollbar {
+    &::-webkit-scrollbar {
+        width: $scrollbar-width;
+    }
+
+    &::-webkit-scrollbar-track {
+        @apply bg-gray-900;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @apply bg-gray-700;
+    }
+      
+}

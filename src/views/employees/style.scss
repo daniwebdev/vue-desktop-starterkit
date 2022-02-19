@@ -42,12 +42,10 @@ $table-header-height: 40px;
 
 .table-body {
     position: fixed;
-    bottom: 0;
-    // top: calc($table-header-height + $top-control-height);
+    bottom: $bottom-nav-height;
     width: calc(100vw - $side-nav-width);
-    // background: black;
     overflow-y: scroll;
-    height: calc( 100vh - $top-nav-height - $table-header-height - $top-control-height);
+    height: calc( $main-height - $table-header-height - $top-control-height);
     .table-row {
         display: flex;
         cursor: pointer;

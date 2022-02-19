@@ -37,7 +37,7 @@ async function createWindow() {
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
-    await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL+"app")
+    await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL+"#/app")
     if (!process.env.IS_TEST) win.webContents.openDevTools()
   } else {
     createProtocol('app')
@@ -46,6 +46,8 @@ async function createWindow() {
     win.loadURL('app://./index.html#/app');
 
   }
+
+  win.maximize();
 }
 
 async function loginWindow() {
@@ -67,7 +69,7 @@ async function loginWindow() {
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
-    await loginWin.loadURL(process.env.WEBPACK_DEV_SERVER_URL+"?goto=login")
+    await loginWin.loadURL(process.env.WEBPACK_DEV_SERVER_URL+"#?goto=login")
     if (!process.env.IS_TEST) loginWin.webContents.openDevTools()
   } else {
     createProtocol('app')

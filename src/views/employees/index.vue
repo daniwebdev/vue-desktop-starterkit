@@ -36,7 +36,7 @@
       </div> -->
     </div>
 
-    <div class="table-body">
+    <div class="table-body scrollbar">
       <div class="table-row" v-for="(items, index) in dataset" :key="'emp_'+index">
         <div v-for="(item, i) in items" :key="'x'+i" class="table-data" :class="{'flex-1': !(columnDefs[i].width > 0)}" :style="(columnDefs[i].width > 0) ? 'width:'+columnDefs[i].width+'px':''">
           <span class="">
@@ -109,7 +109,7 @@ export default {
       // return Array.from({ length: (from - start) }, (v, k) => k + start);
     },
     add_data_set() {
-      this.range(1,10).forEach((i) => {
+      this.range(1,20).forEach((i) => {
           this.dataset.push(        [
             {
               data: "Emp " +  i,

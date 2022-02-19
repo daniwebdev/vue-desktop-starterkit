@@ -42,7 +42,7 @@ export default {
     return {
       menus: [
         {
-          name: "Karyawan",
+          name: "Employee",
           icon: "fas fa-address-card",
           children: [
             {
