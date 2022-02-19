@@ -48,7 +48,9 @@ export default {
             {
               name: "Data Karyawan",
               icon: "fas fa-home",
-              route: "/employee",
+              route: {
+                name: "employee"
+              },
             },
             {
               name: "Jam Kerja",

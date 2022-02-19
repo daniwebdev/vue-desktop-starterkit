@@ -13,6 +13,7 @@ contextBridge.exposeInMainWorld("ipcRenderer", {
       "setTitle",
       "openDialog",
       "onLinkExtenal",
+      "go-app",
     ]; // <-- Array of all ipcRenderer Channels used in the client
     if (validChannels.includes(channel)) {
       ipcRenderer.send(channel, data);

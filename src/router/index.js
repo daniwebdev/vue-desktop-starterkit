@@ -1,29 +1,51 @@
 // import { createRouter, createWebHashHistory } from 'vue-router'
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHashHistory } from 'vue-router'
+// import app from './app'
+// import Home from '../views/Home.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'init',
+    component: () => import('../App.vue')
+
   },
   {
-    path: '/employee',
-    name: 'Employee',
-    component: () => import('../views/employees/index.vue')
+    path: '/app',
+    name: 'home',
+    component: () => import('../layouts/AppHome.vue'),
+    children: [
+      {
+        path: "employee",
+        name: "employee",
+        component: () => import("../views/employees/index.vue"),
+      },
+      {
+        path: "help",
+        name: "help",
+        component: () =>
+          import(/* webpackChunkName: "about" */ "../views/Help.vue"),
+      },
+    ]
   },
   {
-    path: '/help',
-    name: 'Help',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    component: () => import(/* webpackChunkName: "about" */ '../views/Help.vue')
-  }
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/auth/Login.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('../views/auth/Register.vue')
+  },
+
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  mode: 'history',
+  
+  history: createWebHashHistory(),
+  
   routes
 })
 
