@@ -1,4 +1,5 @@
 .top-navigation {
+
     background: white;
     border-bottom: 1px solid #e5e5e5;
     height: $top-nav-height;
@@ -7,6 +8,8 @@
     position: fixed;
     right: 0;
     z-index: 1030;
+    @apply dark:bg-black dark:text-gray-500 dark:border-gray-800 bg-white text-gray-800 border-b border-gray-200;
+
     .top-nav-center {
         -webkit-app-region: drag;
         user-select: none;
@@ -22,9 +25,9 @@
         }
     }
     .brands {
-        width: $left-nav-width;
+        @apply bg-gray-100 dark:bg-gray-800;
+        width: $side-nav-width;
         height: 100%;
-        background: #e5e5e5;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -86,15 +89,17 @@
             margin-right: 10px;
             position: relative;
             .search-panel {
-                @apply border border-gray-200 rounded-md p-1 mr-3;
+                @apply border border-gray-200 rounded-md p-1 mr-3 dark:border-gray-700;
                 font-size: 11px;
                 width: 100%;
                 span {
                     padding: 0px 5px;
                 }
                 input {
+                    @apply dark:bg-black;
                     width: 150px;
                     color: #6b6b6b;
+
                     &:focus {
                         outline: none;
                     }

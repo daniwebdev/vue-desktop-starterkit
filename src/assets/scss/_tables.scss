@@ -1,5 +1,5 @@
     table {
-        width: calc(100vw - $left-nav-width);
+        width: calc(100vw - $side-nav-width);
         thead {
             @apply bg-gray-200;
             tr th {

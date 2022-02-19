@@ -1,5 +1,8 @@
 $top-nav-height: 40px;
-$left-nav-width: 60px;
+$side-nav-width: 60px;
+$bottom-nav-height: 20px;
+$main-width: calc(100% - $side-nav-width);
+$main-height: calc(100vh - $top-nav-height - $bottom-nav-height);
 
 /* <Font Size> */
 
@@ -11,5 +14,5 @@ $font-size-small: $font-size-base - 2px;
 
 :root {
     --top-nav-height: $top-nav-height;
-    --left-nav-width: $left-nav-width;
+    --left-nav-width: $side-nav-width;
 }

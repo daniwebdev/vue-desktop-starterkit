@@ -5,7 +5,7 @@ $table-header-height: 40px;
     height: $top-control-height;
     display: flex;
     align-items: center;
-    width: calc(100vw - $left-nav-width);
+    width: calc(100vw - $side-nav-width);
     button {
         @apply bg-blue-600 px-3 text-white text-sm;
         height: $top-control-height;
@@ -17,17 +17,23 @@ $table-header-height: 40px;
 
 .table-header {
     @apply bg-gray-200;
+    @apply dark:bg-gray-700 dark:text-gray-400;
+
     padding-right: 15px;
     position: fixed;
     height: $table-header-height;
-    width: calc(100vw - $left-nav-width);
+    width: calc(100vw - $side-nav-width);
     display: flex;
     align-items: center;
     .header-data {
         height: $table-header-height;
         display: flex;
         align-items: center;
-        border-left: 1px solid #ccc;
+
+        @apply border-b;
+        @apply dark:border-gray-200;
+        @apply dark:border-none;
+
         &:first-child {
             border-left: none;
         }
@@ -38,7 +44,7 @@ $table-header-height: 40px;
     position: fixed;
     bottom: 0;
     // top: calc($table-header-height + $top-control-height);
-    width: calc(100vw - $left-nav-width);
+    width: calc(100vw - $side-nav-width);
     // background: black;
     overflow-y: scroll;
     height: calc( 100vh - $top-nav-height - $table-header-height - $top-control-height);
@@ -46,11 +52,16 @@ $table-header-height: 40px;
         display: flex;
         cursor: pointer;
         @apply border-b border-gray-200;
+        @apply dark:text-gray-300 dark:border-gray-800;
+
         &:hover {
             @apply bg-gray-100;
+            @apply dark:bg-gray-800;
         }
         .table-data {
-            border-left: 1px solid #ddd;
+            @apply border-l border-gray-200;
+            @apply dark:text-gray-500 dark:border-gray-800;
+            // border-left: 1px solid #ddd;
             // display: flex;
             // align-items: center;
             padding: 8px 8px;

@@ -1,10 +1,12 @@
+body {
+    @apply dark:bg-black;
+}
 main {
-    background: #fff;
     position: relative;
-    margin-left: $left-nav-width;
+    margin-left: $side-nav-width;
     margin-top: $top-nav-height;
-    height: calc(100vh - $top-nav-height);
-    width: calc(100% - $left-nav-width);
+    height: $main-height;
+    width: $main-width;
     overflow: auto;
     /* width */
     &::-webkit-scrollbar {
@@ -32,9 +34,9 @@ main {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
-    margin-left: $left-nav-width;
+    margin-left: $side-nav-width;
     margin-top: $top-nav-height;
     height: calc(100vh - $top-nav-height);
-    width: calc(100% - $left-nav-width);
+    width: calc(100% - $side-nav-width);
     transition: all 0.2s ease-in-out;
 }

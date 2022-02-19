@@ -1,14 +1,17 @@
 .left-navigation {
-    border-right: 1px solid #e5e5e5;
+    
     position: fixed;
     top: $top-nav-height;
     left: 0;
-    width: $left-nav-width;
+    width: $side-nav-width;
     height: calc(100vh - $top-nav-height);
     z-index: 1030;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+
+    @apply  bg-white text-black border-r;
+    @apply dark:bg-black dark:text-gray-500 dark:border-gray-800;
 }
 
 .vertical-menu {
@@ -31,30 +34,36 @@
         }
         &.active {
             @apply bg-gray-200;
+            @apply dark:bg-gray-900;
+
             .submenu {
                 display: block;
                 z-index: 1031;
             }
         }
         a {
+            @apply border-b border-gray-200 ;
+            @apply dark:border-gray-800;
             display: block;
             text-align: center;
-            border-bottom: 1px solid #e5e5e5;
         }
         ul.submenu {
+            @apply bg-gray-200;
+            @apply dark:bg-gray-800;
             position: absolute;
-            background: #e5e5e5;
             display: none;
             list-style: none;
             margin: 0;
             padding: 0;
-            left: $left-nav-width;
+            left: $side-nav-width;
             top: 0;
             width: 200px;
             height: calc(100vh - $top-nav-height);
             text-align: left;
             li.title {
-                background: #646464;
+                @apply bg-gray-500;
+                @apply dark:bg-gray-900;
+
                 color: white;
                 text-transform: uppercase;
                 font-size: $font-size-base;
