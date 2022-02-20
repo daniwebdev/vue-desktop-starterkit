@@ -41,13 +41,29 @@ export const initContextMenu = () => {
   document.querySelectorAll("main .context").forEach((el) => {
     el.addEventListener("contextmenu", (e) => {
       e.preventDefault();
+
       if (!hideContextMenu(e)) {
         return;
       }
+      var data = null;
+
+      try {
+        data = JSON.parse(el.getAttribute("data"));
+      } catch (e) {
+        data = el.getAttribute("data");
+      }
+      // let data = e.target.getAttribute('data');
+      console.log(data);
+      window.context_data = data;
       // console.log("Coordinate(X) = " + e.clientX + "<br>Coordinate(Y) = " + e.clientY);
-      document.querySelector(".context-menu").style.left =
-        e.clientX - 60 + "px";
-      document.querySelector(".context-menu").style.top = e.clientY - 40 + "px";
+
+      // console.log(innerHeight - e.clientY)
+      if(((innerWidth - e.clientX) < 165)) {
+        document.querySelector(".context-menu").style.left = e.clientX - 200 + "px";
+      } else {
+        document.querySelector(".context-menu").style.left = e.clientX - 60 + "px";
+      }
+      document.querySelector(".context-menu").style.top = ((innerHeight - e.clientY) < 160 ? e.clientY - 160:e.clientY - 40) + "px";
     });
   });
 

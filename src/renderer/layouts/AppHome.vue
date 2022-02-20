@@ -64,9 +64,9 @@
   }
 </style>
 <script>
-import TopNavigation from '@/renderer/components/layouts/TopNavigation.vue'
-import SideNavigation from '@/renderer/components/layouts/SideNavigation.vue'
-import BottomNavigation from '@/renderer/components/layouts/BottomNavigation.vue'
+import TopNavigation from '@/renderer/components/navigations/TopNavigation.vue'
+import SideNavigation from '@/renderer/components/navigations/SideNavigation.vue'
+import BottomNavigation from '@/renderer/components/navigations/BottomNavigation.vue'
 import {initContextMenu} from '@/renderer/utils/common.js';
 
 export default {
@@ -84,13 +84,12 @@ export default {
   },
 
   mounted() {
-    initContextMenu();
+      initContextMenu();
 
     this.$store.commit('toggleDarkMode', localStorage.getItem("darkMode") == "true");
   },
-
-  created() {
-
+  updated() {
+      initContextMenu();
   },
   
 }

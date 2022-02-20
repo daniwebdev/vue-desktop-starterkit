@@ -1,19 +1,17 @@
 <template>
   <div class="px-5">
-    <div v-for="i in [1,2,3]" :key="i" class="main-form grid gap-10 grid-cols-2 dark:text-gray-300 text-gray-700">
+    <div v-for="i in [1]" :key="i" class="main-form grid gap-10 grid-cols-2 dark:text-gray-300 text-gray-700">
       <!-- Personal Information -->
       <div class="">
         <div class="grid gap-3 grid-cols-2">
           <div class="form-title">
             <h1>Personal Information</h1>
           </div>
-          <div class="form-group col-span-2">
-            <label for="identity_number">Identity Number</label>
-            <input type="text" class="form-control" id="identity_number" />
+          <div class="col-span-2">
+            <input-text label="Identity Number" placeholder="Put your identity number"></input-text>
           </div>
-          <div class="form-group col-span-1">
-            <label for="first_name">First Name</label>
-            <input type="text" class="form-control" id="first_name" />
+          <div class="col-span-1">
+            <input-text label="First Name" value="test"></input-text>
           </div>
           <div class="form-group col-span-1">
             <label for="last_name">Last Name</label>
@@ -94,7 +92,12 @@
 </template>
 
 <script>
+import InputText from '@/renderer/components/elements/form/InputText.vue'
+
 export default {
+  components: {
+    InputText
+  },
   mounted() {
     document.querySelector(".form-file").addEventListener("click", (e) => {
       // this.querySelector('input[type="file"]').click();

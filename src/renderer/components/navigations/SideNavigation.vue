@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import NavMenuItem from '../menus/NavMenuItem.vue';
+import NavMenuItem from '../partial/NavMenuItem.vue';
 
 export default {
   components: { NavMenuItem },
