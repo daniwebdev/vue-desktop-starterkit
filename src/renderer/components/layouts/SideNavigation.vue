@@ -59,6 +59,26 @@ export default {
             },
           ],
         },
+        {
+          name: "UI Kit",
+          icon: "fas fa-paint-brush",
+          children: [
+            {
+              name: "Form",
+              icon: "fas fa-form",
+              route: {
+                name: "ui.form"
+              },
+            },
+            {
+              name: "Button",
+              icon: "fas fa-form",
+              route: {
+                // name: "form"
+              },
+            },
+          ],
+        },
       ],
     };
   },
@@ -71,11 +91,23 @@ export default {
   },
 
   mounted() {
-    document.querySelector('.vertical-menu>li').addEventListener('click', function () {
-        this.classList.toggle('active');
-        document.querySelector('.page-overlay').classList.toggle('hidden');
-        // this.querySelector('.sub-menu').classList.toggle('active');
-    });
+    document.querySelectorAll('.vertical-menu>li').forEach(el => {
+      
+      el.addEventListener('click', function () {
+          
+          // if(this.classList.contains('active')) {
+          //   this.classList.remove('active');
+          //   console.log('remove');
+          // } else {
+          //   }
+            this.classList.toggle('active');
+            document.querySelector('.page-overlay').classList.toggle('hidden');
+            
+          // this.classList.toggle('active');
+          
+          // this.querySelector('.sub-menu').classList.toggle('active');
+      });
+    })
 
     document.querySelector('.page-overlay').addEventListener('click', function () {
         this.classList.add('hidden');

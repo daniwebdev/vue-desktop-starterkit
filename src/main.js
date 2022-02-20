@@ -1,13 +1,12 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import App from './renderer/App.vue'
 
 import './assets/tailwind.css'
 
 import './assets/scss/index.scss'
 
-import appstore from './store';
-import router from './router'
-
+import appstore from './renderer/store';
+import router from './renderer/router'
 
 const app = createApp(App)
 

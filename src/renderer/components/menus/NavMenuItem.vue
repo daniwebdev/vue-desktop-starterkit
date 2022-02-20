@@ -1,7 +1,7 @@
 <template>
   <router-link to="#" :title="data.name">
-    <i class="fas fa-address-card"></i>
-    <span>{{ data.name }}</span>
+    <i :class="data.icon"></i>
+    <span class="block">{{ data.name }}</span>
   </router-link>
 </template>
 

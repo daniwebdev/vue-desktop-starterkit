@@ -111,7 +111,7 @@
 </template>
 
 <script>
-import {searchToggleSuggestion} from "@/utils/common";
+import {searchToggleSuggestion} from "@/renderer/utils/common";
 
 export default {
   data() {

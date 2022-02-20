@@ -1,0 +1,144 @@
+<template>
+  <div class="px-5">
+    <div v-for="i in [1,2,3]" :key="i" class="main-form grid gap-10 grid-cols-2 dark:text-gray-300 text-gray-700">
+      <!-- Personal Information -->
+      <div class="">
+        <div class="grid gap-3 grid-cols-2">
+          <div class="form-title">
+            <h1>Personal Information</h1>
+          </div>
+          <div class="form-group col-span-2">
+            <label for="identity_number">Identity Number</label>
+            <input type="text" class="form-control" id="identity_number" />
+          </div>
+          <div class="form-group col-span-1">
+            <label for="first_name">First Name</label>
+            <input type="text" class="form-control" id="first_name" />
+          </div>
+          <div class="form-group col-span-1">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" id="last_name" />
+          </div>
+          <div class="form-group col-span-1">
+            <label for="born_at">Born At</label>
+            <input type="text" class="form-control" id="born_at" />
+          </div>
+          <div class="form-group col-span-1">
+            <label for="date_of_birhtday">Date of Birhtday</label>
+            <input type="text" class="form-control" id="date_of_birhtday" />
+          </div>
+          <div class="form-group col-span-1">
+            <label for="gender">Gender</label>
+            <!-- <input type="text" class="form-control" id="gender" /> -->
+            <select name="" class="form-control" id="">
+                <option value="">Islam</option>
+                <option value="">Islam</option>
+                <option value="">Islam</option>
+            </select>
+          </div>
+          <div class="form-group col-span-1">
+            <label for="religion">Religion</label>
+            <input type="text" class="form-control" id="religion" />
+          </div>
+          <div class="form-group col-span-1">
+            <label for="blood">Blood</label>
+            <input type="text" class="form-control" id="blood" />
+          </div>
+          <div class="form-group col-span-1">
+            <label for="etnic">Etnic / Clan</label>
+            <input type="text" class="form-control" id="etnic" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact & Documents -->
+      <div>
+        <div class="grid gap-3 grid-cols-2">
+          <div class="form-title">
+            <h1>Contact</h1>
+          </div>
+          <div class="form-group col-span-1">
+            <label for="identity_number">Phone Number (Primary)</label>
+            <input type="text" class="form-control" id="identity_number" />
+          </div>
+          <div class="form-group col-span-1">
+            <label for="identity_number">Phone Number (Secondary)</label>
+            <input type="text" class="form-control" id="identity_number" />
+          </div>
+          <div class="form-group col-span-1">
+            <label for="identity_number">Email (Primary)</label>
+            <input type="text" class="form-control" id="identity_number" />
+          </div>
+          <div class="form-group col-span-1">
+            <label for="identity_number">Email (Secondary)</label>
+            <input type="text" class="form-control" id="identity_number" />
+          </div>
+
+          <div class="form-title">
+            <h1>File & Documents</h1>
+          </div>
+
+          <div class="col-span-2">
+            <div class="grid gap-4 grid-cols-3">
+              <div class="form-group form-file">
+                <i class="fas fa-upload mb-3"></i>
+                <label class="">Identity Card</label>
+                <input type="file" name="" id="" hidden />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  mounted() {
+    document.querySelector(".form-file").addEventListener("click", (e) => {
+      // this.querySelector('input[type="file"]').click();
+      e.target.querySelector('input[type="file"]').click();
+
+      e.target
+        .querySelector('input[type="file"]')
+        .addEventListener("change", function (eF) {
+          console.log(eF.target.files);
+        });
+    });
+  },
+};
+</script>
+
+<style lang="scss">
+.main-form {
+  @apply mt-4;
+
+  .form-title {
+    @apply col-span-2 text-xl font-semibold;
+  }
+
+  .form-group {
+    label {
+      @apply font-normal;
+    }
+
+    .form-control {
+      @apply w-full bg-white border border-gray-300 rounded-md py-2 px-3 outline-none;
+      @apply dark:bg-gray-900 dark:border-gray-900;
+    }
+
+    &.form-file {
+      @apply flex flex-col justify-center items-center text-3xl h-40 dark:bg-gray-900 rounded-md;
+      @apply hover:bg-gray-200 dark:hover:bg-gray-800;
+      @apply border border-gray-300 dark:border-gray-900;
+
+      cursor: pointer;
+
+      * {
+        cursor: pointer;
+      }
+    }
+  }
+}
+</style>

@@ -2,7 +2,7 @@
     <auth-layout>
         <div id="auth">
             <div class="container ">
-                <h1>Register</h1>
+                <h1>Login to Application</h1>
 
                 <form @submit.prevent="login" class="mb-5">
                     <div class="form-group">
@@ -17,7 +17,7 @@
                 </form>
 
                 <div>
-                    Do you have an account? <router-link :to="{name: 'login'}">Please Login</router-link>
+                    Don't have an account? <router-link :to="{name: 'register'}">Register</router-link>
                 </div>
 
             </div>
@@ -27,7 +27,7 @@
 
 <script>
 
-import AuthLayout from '@/layouts/AuthLayout.vue'
+import AuthLayout from '@/renderer/layouts/AuthLayout.vue'
 export default {
     components: {
         AuthLayout
@@ -41,6 +41,7 @@ export default {
 
     methods: {
         login() {
+            window.ipcRenderer.send('go-app');
             console.log(this.email,this.password)
         }
     }
@@ -48,5 +49,5 @@ export default {
 </script>
 
 <style lang="scss">
-    @import "./style.scss";
+   @import './style.scss';
 </style>

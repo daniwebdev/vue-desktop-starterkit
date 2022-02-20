@@ -1,5 +1,5 @@
 export function searchToggleSuggestion() {
-    console.log('searchToggleSuggestion');
+  console.log("searchToggleSuggestion");
   document
     .querySelector(".search-panel input")
     .addEventListener("keyup", function (e) {
@@ -27,31 +27,29 @@ export function searchToggleSuggestion() {
     });
 }
 
-
 export const initContextMenu = () => {
-
   let hideContextMenu = (e) => {
-    if (e.target.classList.contains('context')) {
+    if (e.target.classList.contains("context")) {
       return false;
     }
-    document.querySelector('.context-menu').style.left = '-9999px';
-    document.querySelector('.context-menu').style.top = '-9999px';
+    document.querySelector(".context-menu").style.left = "-9999px";
+    document.querySelector(".context-menu").style.top = "-9999px";
 
     return true;
-  }
+  };
 
-  document.querySelectorAll('main .context').forEach(el => {
-      el.addEventListener('contextmenu', (e) => {
+  document.querySelectorAll("main .context").forEach((el) => {
+    el.addEventListener("contextmenu", (e) => {
       e.preventDefault();
-      if(!hideContextMenu(e)) {
+      if (!hideContextMenu(e)) {
         return;
       }
       // console.log("Coordinate(X) = " + e.clientX + "<br>Coordinate(Y) = " + e.clientY);
-      document.querySelector('.context-menu').style.left = (e.clientX - 60) + 'px';
-      document.querySelector('.context-menu').style.top = (e.clientY - 40) + 'px';
-    })
+      document.querySelector(".context-menu").style.left =
+        e.clientX - 60 + "px";
+      document.querySelector(".context-menu").style.top = e.clientY - 40 + "px";
+    });
   });
 
-
-  document.documentElement.addEventListener('click', hideContextMenu)
-}
+  document.documentElement.addEventListener("click", hideContextMenu);
+};

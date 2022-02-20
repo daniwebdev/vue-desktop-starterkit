@@ -64,13 +64,13 @@
   }
 </style>
 <script>
-import TopNavigation from '@/components/layouts/TopNavigation.vue'
-import SideNavigation from '@/components/layouts/SideNavigation.vue'
-import BottomNavigation from '@/components/layouts/BottomNavigation.vue'
-import {initContextMenu} from '@/utils/common.js';
+import TopNavigation from '@/renderer/components/layouts/TopNavigation.vue'
+import SideNavigation from '@/renderer/components/layouts/SideNavigation.vue'
+import BottomNavigation from '@/renderer/components/layouts/BottomNavigation.vue'
+import {initContextMenu} from '@/renderer/utils/common.js';
 
 export default {
-  name: 'App',
+  name: 'AppHome',
   components: {
     TopNavigation,
     BottomNavigation,

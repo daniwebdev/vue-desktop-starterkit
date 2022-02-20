@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import DataGrid from '@/components/partial/DataGrid.vue'
+import DataGrid from '@/renderer/components/partial/DataGrid.vue'
 export default {
   components: {
     DataGrid

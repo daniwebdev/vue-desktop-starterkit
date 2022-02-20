@@ -20,6 +20,7 @@ const routes = [
       },
 
       ...require('./employee').routes,
+      ...require('./ui').routes,
 
     ]
   },
