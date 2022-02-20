@@ -1,5 +1,5 @@
 <template>
-    <div id="help" class="p-4">
+    <div id="help" class="p-4 dark:text-gray-400">
         <h2 class="text-xl font-bold">
             Pusat Bantuan
         </h2>

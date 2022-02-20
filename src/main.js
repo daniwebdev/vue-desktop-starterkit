@@ -6,8 +6,8 @@ import './assets/tailwind.css'
 import './assets/scss/index.scss'
 
 import appstore from './store';
-
 import router from './router'
+
 
 const app = createApp(App)
 

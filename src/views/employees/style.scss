@@ -30,9 +30,8 @@ $table-header-height: 40px;
         display: flex;
         align-items: center;
 
-        @apply border-b;
+        // @apply border-b;
         @apply dark:border-gray-200;
-        @apply dark:border-none;
 
         &:first-child {
             border-left: none;
@@ -51,6 +50,11 @@ $table-header-height: 40px;
         cursor: pointer;
         @apply border-b border-gray-200;
         @apply dark:text-gray-300 dark:border-gray-800;
+
+
+        &:last-child {
+            border-bottom: none;
+        }
 
         &:hover {
             @apply bg-gray-100;

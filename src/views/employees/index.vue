@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="main-control">
-      <button>
+      <router-link :to="{name: 'employee.form'}" class="btn btn-primary">
         <i class="fa fa-plus" aria-hidden="true"></i>
         New
-      </button>
+      </router-link>
       <button>
         <i class="fas fa-file-import" aria-hidden="true"></i>
         Import
@@ -18,52 +18,16 @@
         Mutation
       </button>
     </div>
-    <div class="table-header">
-      <div v-for="(col, i) in columnDefs" :key="'col_'+i" class="header-data" :class="{'flex-1': !(col.width > 0)}" :style="(col.width > 0) ? 'width:'+col.width+'px':''">
-        <span class="px-2">
-          {{ col.headerName }}
-        </span>
-      </div>
-      <!-- <div style="width: 300px">
-        <span class="px-2">
-          Jabatan
-        </span>
-      </div>
-      <div style="width: 300px">
-        <span class="px-2">
-          Status
-        </span>
-      </div> -->
-    </div>
 
-    <div class="table-body scrollbar">
-      <div class="table-row" v-for="(items, index) in dataset" :key="'emp_'+index">
-        <div v-for="(item, i) in items" :key="'x'+i" class="table-data" :class="{'flex-1': !(columnDefs[i].width > 0)}" :style="(columnDefs[i].width > 0) ? 'width:'+columnDefs[i].width+'px':''">
-          <span class="">
-            {{ item.data }}
-            <!-- <shimmer-text></shimmer-text> -->
-          </span>
-        </div>
-        <!-- <div class="table-data" style="width: 300px">
-          <span class="px-2">
-            Dept. IT Development
-          </span>
-        </div>
-        <div class="table-data" style="width: 300px">
-          <span class="px-2">
-            Aktif
-          </span>
-        </div> -->
-      </div>
-    </div>
+    <data-grid :columnDefs="columnDefs" :datasets="datasets"></data-grid>
   </div>
 </template>
 
 <script>
-// import ShimmerText from './../../components/shimmer/shimmerText.vue'
+import DataGrid from '@/components/partial/DataGrid.vue'
 export default {
   components: {
-    // ShimmerText
+    DataGrid
   },
   data() {
     return {
@@ -89,7 +53,7 @@ export default {
           filter: true,
         },
       ],
-      dataset: [
+      datasets: [
 
       ]
     }
@@ -110,7 +74,7 @@ export default {
     },
     add_data_set() {
       this.range(1,20).forEach((i) => {
-          this.dataset.push(        [
+          this.datasets.push(        [
             {
               data: "Emp " +  i,
             },

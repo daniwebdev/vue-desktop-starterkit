@@ -6,30 +6,74 @@
   <!-- Main Router -->
   <div class="page-overlay hidden"></div>
   <main>
+
+    <div class="context-menu">
+      <ul>
+        <li>
+          <i class="fas fa-pencil-alt"></i>
+          <span>Edit</span>
+        </li>
+        <li class="">
+          <i class="fas fa-copy"></i> <span>Copy</span>
+        </li>
+        <li class="">
+          <i class="fas fa-paste"></i> <span>Paste</span>
+        </li>
+        <li class="">
+          <i class="fas fa-trash-alt"></i> <span>Delete</span>
+        </li>
+
+      </ul>
+    </div>
+
     <router-view/>
+
   </main>
 
-  <!-- Footer -->
-  <div class="bottom-navigation">
-    <div>
-      Location: {{ current_path }}
-    </div>
-    <div>
-      <div class="clock">
-        <i class="fas fa-clock" aria-hidden="true"></i>
-        <span>00:00:00</span>
-      </div>
-    </div>
-  </div>
+  <bottom-navigation></bottom-navigation>
 </template>
+
+<style lang="scss">
+  .context-menu {
+    @apply bg-white rounded;
+    @apply dark:bg-gray-900 dark:text-gray-400;
+    width: 150px;
+    z-index: 1000;
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+
+    ul {
+      li {
+        @apply border-b text-xs p-2 hover:bg-gray-300 dark:border-gray-800 ;
+        cursor: pointer;
+        &:hover {
+          @apply dark:bg-gray-700;
+        }
+        &:first-child {
+          @apply rounded-t ;
+        }
+        &:last-child {
+          @apply border-none rounded-b ;
+        }
+        span {
+          @apply ml-2;
+        }
+      }
+    }
+  }
+</style>
 <script>
 import TopNavigation from '@/components/layouts/TopNavigation.vue'
 import SideNavigation from '@/components/layouts/SideNavigation.vue'
+import BottomNavigation from '@/components/layouts/BottomNavigation.vue'
+import {initContextMenu} from '@/utils/common.js';
 
 export default {
   name: 'App',
   components: {
     TopNavigation,
+    BottomNavigation,
     SideNavigation,
   },
 
@@ -38,42 +82,16 @@ export default {
       // current_path: '/',
     }
   },
-  computed: {
-    current_path() {
-      return this.$route.fullPath
-    },
-  },
+
   mounted() {
-    document.querySelector('main').addEventListener('contextmenu', (e) => {
-      e.preventDefault();
-      console.log("Coordinate(X) = " + e.clientX + "<br>Coordinate(Y) = " + e.clientY);
+    initContextMenu();
 
-    })
-    console.log('App mounted');
-
-
-    setInterval(this.realtime_clock, 1000);
+    this.$store.commit('toggleDarkMode', localStorage.getItem("darkMode") == "true");
   },
 
   created() {
-    this.$store.commit('toggleDarkMode', localStorage.getItem("darkMode") == "true");
+
   },
   
-
-  methods: {
-    realtime_clock() {
-      var clock = document.querySelector('.clock span');
-      var time = new Date();
-      var hours = time.getHours().toString().padStart(2, '0');
-      var minutes = time.getMinutes();
-      var seconds = time.getSeconds().toString().padStart(2, '0');
-      // var ampm = hours >= 12 ? 'PM' : 'AM';
-      // hours = hours % 12;
-      // hours = hours ? hours : 12;
-      minutes = minutes < 10 ? '0' + minutes : minutes;
-      
-      clock.innerHTML = hours + ':' + minutes + ':' + seconds;
-    },
-  },
 }
 </script>
