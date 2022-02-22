@@ -10,8 +10,8 @@
     justify-content: space-between;
     flex-direction: column;
 
-    @apply  bg-white text-black border-r;
-    @apply dark:bg-black dark:text-gray-500 dark:border-gray-800;
+    @apply  bg-white border-r;
+    @apply dark:bg-black dark:border-gray-800;
 }
 
 .vertical-menu {
@@ -22,6 +22,7 @@
     height: 100%;
     overflow-y: auto;
     li {
+        @apply button-main-navigation;
         &.menu-item {
             font-size: 11px;
             text-transform: capitalize;
@@ -90,8 +91,8 @@ ul.bottom-section-menu {
         align-items: center;
         justify-content: center;
         padding: 10px 0;
+        @apply button-main-navigation;
         &:hover {
-            @apply bg-gray-200;
             cursor: pointer;
         }
     }

@@ -1,5 +1,5 @@
 body {
-    @apply dark:bg-black;
+    @apply dark:bg-black dark:text-gray-300 text-gray-700;
 }
 main {
     position: relative;
@@ -28,6 +28,8 @@ main {
     // }
 }
 
+
+/* block main page only */
 .page-overlay {
     position: absolute;
     top: 0;
@@ -41,4 +43,16 @@ main {
     height: calc(100vh - $top-nav-height);
     width: calc(100% - $side-nav-width);
     transition: all 0.2s ease-in-out;
+}
+
+/* full page block */
+.full-page-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+    height: 100vh;
+    width: 100vw;
+    transition: all 0.2s ease-in-out; 
 }

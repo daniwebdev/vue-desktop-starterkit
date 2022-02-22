@@ -1,7 +1,10 @@
 const {
     contextBridge,
-    ipcRenderer
+    ipcRenderer,
 } = require("electron");
+
+// const { ExtentionRepository } = require("./extention/ExtentionRepository");
+
 
 contextBridge.exposeInMainWorld("ipcRenderer", {
   send: (channel, data) => {

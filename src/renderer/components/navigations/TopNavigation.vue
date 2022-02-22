@@ -46,8 +46,9 @@
             <input type="text">
           </div>
   
+          <!-- search-suggestion -->
           <div class="search-suggestion">
-            <div v-for="(x, i) in [1,2,3,4,5,6,7,8]" :key="i" class="p-1 text-sm border-b search-suggestion-item">
+            <div v-for="(x, i) in [1,2,3,4,5,6,7,8]" :key="i" class="search-suggestion-item">
               <a class="flex items-center" href="#">
                 <div>
                   <img src="//via.placeholder.com/40" alt="">
@@ -61,6 +62,7 @@
               </a>
             </div>
           </div>
+          <!-- search-suggestion -->
         </div>
           <!-- <div class="top-nav-divider"></div> -->
 
@@ -95,7 +97,7 @@
           <!-- <i class="fas fa-window-minimize"></i> -->
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
         </div>
-        <div class="window-nav-item ">
+        <div class="window-nav-item close-app" @click="() => {document.querySelector('.alert').classList.toggle('hidden')}">
           <!-- <i class="fas fa-times"></i> -->
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </div>
@@ -108,15 +110,25 @@
     </div>
     
   </nav>
+
+  <alert :show="alert_close_app"></alert>
 </template>
 
 <script>
+
+import Alert from '../partial/Alert.vue';
+
 import {searchToggleSuggestion} from "@/renderer/utils/common";
 
 export default {
+
+  components: {
+    Alert
+  },
   data() {
     return {
       is_browser: false,
+      alert_close_app: false,
     }
   },
   computed: {

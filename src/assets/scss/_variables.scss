@@ -23,3 +23,13 @@ $font-size-small: $font-size-base - 2px;
   --top-nav-height: $top-nav-height;
   --left-nav-width: $side-nav-width;
 }
+
+/* 
+  globa setup for button in main navigation (side-nav, top-nav, bottom-nav)
+*/
+.button-main-navigation {
+  @apply outline-none;
+  &:hover {
+    @apply dark:bg-gray-800 bg-gray-200;
+  }
+}

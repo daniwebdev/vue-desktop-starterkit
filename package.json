@@ -1,7 +1,8 @@
 {
-    "name": "desktop-scafold",
+    "name": "vue-desktop-starter",
     "version": "0.1.0",
     "private": true,
+    "ext_dir": "./extentions",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",

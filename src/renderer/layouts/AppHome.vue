@@ -5,6 +5,8 @@
 
   <!-- Main Router -->
   <div class="page-overlay hidden"></div>
+  <div class="full-page-overlay hidden"></div>
+
   <main>
 
     <div class="context-menu">
@@ -34,6 +36,7 @@
 </template>
 
 <style lang="scss">
+
   .context-menu {
     @apply bg-white rounded;
     @apply dark:bg-gray-900 dark:text-gray-400;
@@ -92,5 +95,6 @@ export default {
       initContextMenu();
   },
   
+
 }
 </script>

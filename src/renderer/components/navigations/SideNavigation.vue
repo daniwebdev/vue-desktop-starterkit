@@ -36,6 +36,58 @@
 <script>
 import NavMenuItem from '../partial/NavMenuItem.vue';
 
+
+const init_menu_event = () => {
+
+    var remove_all_active = () => {
+        document.querySelectorAll('.vertical-menu>li.active').forEach(sub => {
+          try {
+            sub.classList.remove('active');
+          } catch (error) {
+            console.log(error)
+          }
+
+        });
+    }
+
+    var on_click_submenu = () => {
+      document.querySelectorAll('ul.submenu>li').forEach(el => {
+        
+        var _handle = () => {
+          remove_all_active();
+
+          document.querySelector('.page-overlay').classList.add('hidden');
+        }
+
+        el.removeEventListener('click', _handle, true);
+        
+        el.addEventListener('click', _handle, true);
+      });
+    }
+
+    document.querySelectorAll('.vertical-menu>li').forEach(el => {
+      
+      var _handle = function () {
+        remove_all_active();
+
+        this.classList.add('active');
+
+        document.querySelector('.page-overlay').classList.remove('hidden');
+
+        on_click_submenu();
+      }
+
+      el.removeEventListener('click', _handle, true);
+
+      el.addEventListener('click', _handle, true);
+    });
+
+    document.querySelector('.page-overlay').addEventListener('click', function () {
+        this.classList.add('hidden');
+        remove_all_active();
+    });
+}
+
 export default {
   components: { NavMenuItem },
   data() {
@@ -91,29 +143,7 @@ export default {
   },
 
   mounted() {
-    document.querySelectorAll('.vertical-menu>li').forEach(el => {
-      
-      el.addEventListener('click', function () {
-          
-          // if(this.classList.contains('active')) {
-          //   this.classList.remove('active');
-          //   console.log('remove');
-          // } else {
-          //   }
-            this.classList.toggle('active');
-            document.querySelector('.page-overlay').classList.toggle('hidden');
-            
-          // this.classList.toggle('active');
-          
-          // this.querySelector('.sub-menu').classList.toggle('active');
-      });
-    })
-
-    document.querySelector('.page-overlay').addEventListener('click', function () {
-        this.classList.add('hidden');
-        document.querySelector('.vertical-menu>li').classList.remove('active');
-        // document.querySelector('.vertical-menu>li').querySelector('.sub-menu').classList.remove('active');
-    });
+    init_menu_event();
   }
 };
 </script>
