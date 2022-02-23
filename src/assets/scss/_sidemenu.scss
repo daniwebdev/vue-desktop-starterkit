@@ -38,8 +38,9 @@
             @apply dark:bg-gray-900;
 
             .submenu {
-                display: block;
-                z-index: 1031;
+                // display: block;
+                opacity: 1;
+                left: $side-nav-width;
             }
         }
         a {
@@ -52,15 +53,17 @@
             @apply bg-gray-200;
             @apply dark:bg-gray-800;
             position: absolute;
-            display: none;
             list-style: none;
             margin: 0;
             padding: 0;
-            left: $side-nav-width;
+            transition: all 0.2s ease-in;
+            left: -200px;
+            opacity: 0;
             top: 0;
             width: 200px;
             height: calc(100vh - $top-nav-height);
             text-align: left;
+            z-index: 1;
             li.title {
                 @apply bg-gray-500;
                 @apply dark:bg-gray-900;

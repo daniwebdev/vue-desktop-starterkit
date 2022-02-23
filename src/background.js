@@ -60,7 +60,7 @@ async function loginWindow() {
     resizable: false,
     webPreferences: {
       preload: path.join(__dirname,"preload.js"),
-
+      webviewTag: true,
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,

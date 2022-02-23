@@ -26,17 +26,21 @@
             <input type="text" class="form-control" id="date_of_birhtday" />
           </div>
           <div class="form-group col-span-1">
-            <label for="gender">Gender</label>
-            <!-- <input type="text" class="form-control" id="gender" /> -->
+            <label for="">Gender</label>
+            <div class="form-radio">
+              <input type="radio" name="gender" id="famela"> <label for="famela">Famela</label>
+            </div>
+            <div class="form-radio">
+              <input type="radio" name="gender" id="male"> <label for="male">Male</label>
+            </div>
+          </div>
+          <div class="form-group col-span-1">
+            <label for="religion">Religion</label>
             <select name="" class="form-control" id="">
                 <option value="">Islam</option>
                 <option value="">Islam</option>
                 <option value="">Islam</option>
             </select>
-          </div>
-          <div class="form-group col-span-1">
-            <label for="religion">Religion</label>
-            <input type="text" class="form-control" id="religion" />
           </div>
           <div class="form-group col-span-1">
             <label for="blood">Blood</label>
@@ -85,6 +89,15 @@
               </div>
             </div>
           </div>
+
+          <div class="form-group">
+            <label for="customRange3">Custom range</label>
+            <input type="range" class="custom-range custom-range-teal" id="customRange3">
+          </div>
+          <div class="form-group">
+            <label for="customRange3">Custom range</label>
+            <input type="range" class="custom-range custom-range-teal" id="customRange3">
+          </div>
         </div>
       </div>
     </div>
@@ -126,9 +139,32 @@ export default {
       @apply font-normal;
     }
 
+    .custom-range {
+        @apply dark:bg-gray-800 rounded-md text-red-600;
+        width: 100%;
+        height: 1rem;
+        padding: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    .form-radio {
+      @apply inline mr-3;
+
+
+      label {
+        @apply inline;
+      }
+    }
+
     .form-control {
       @apply w-full bg-white border border-gray-300 rounded-md py-2 px-3 outline-none;
-      @apply dark:bg-gray-900 dark:border-gray-900;
+      @apply dark:bg-gray-800 dark:border-gray-900;
+
+      &::placeholder {
+        @apply dark:text-gray-600;
+      }
     }
 
     &.form-file {

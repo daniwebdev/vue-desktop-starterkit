@@ -11,28 +11,34 @@
 </template>
 
 <script>
-
+import { ClassWatcher } from '@/renderer/utils/class_watcher.js';
 export default {
-    props: {
-        show: {
-            type: Boolean,
-            default: false,
-        },
-    },
+    // props: {
+    //     show: {
+    //         type: Boolean,
+    //         default: false,
+    //     },
+    // },
 
-    computed: {
-        
+    data() {
+      return {
+        show: false,
+        class_watcher: undefined,
+      }
     },
 
     mounted() {
+      this.class_watcher = new ClassWatcher(document.querySelector('.alert'), 'hidden', () => {this.alertUpdate(false)}, () => {this.alertUpdate(true)});
+      this.class_watcher.observe()
       this.dragable_alert();
     },
     methods: {
         close_alert() {
             var ol = document.querySelector('.full-page-overlay');
             this.$refs.mainalert.classList.add('hidden');
-            ol.classList.add('hidden')
+            ol.classList.add('hidden');
         },
+
         dragable_alert() {
 
             document.querySelector('.alert-header button').addEventListener('click', () => {
@@ -81,22 +87,27 @@ export default {
             isMouseDown = false;
             document.body.classList.remove('no-select');
         })
+        },
+
+        alertUpdate(show) {
+            var ol = document.querySelector('.full-page-overlay');
+
+            if(show) {
+                ol.classList.remove('hidden');
+
+                this.$refs.mainalert.classList.remove('hidden')
+            } else {
+                this.$refs.mainalert.classList.add('hidden')
+                ol.classList.add('hidden');
+            }
+
+            this.dragable_alert();
+
         }
     },
+
     updated() {
-        var ol = document.querySelector('.full-page-overlay');
-
-        if(this.show) {
-            ol.classList.remove('hidden');
-
-            this.$refs.mainalert.classList.remove('hidden')
-        } else {
-            this.$refs.mainalert.classList.add('hidden')
-            ol.classList.add('hidden');
-        }
-
-        this.dragable_alert();
-
+      this.alertUpdate(this.show);
     }
 }
 </script>
