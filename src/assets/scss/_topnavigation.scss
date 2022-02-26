@@ -76,7 +76,7 @@
         &:hover {
           background: #e5e5e5;
         }
-        .badge {
+        .badge-notification {
           position: absolute;
           background: red;
           border-radius: 50%;
@@ -87,8 +87,8 @@
           color: white;
           width: 10px;
           height: 10px;
-          right: 10px;
           opacity: 1;
+          right: 10px;
           top: 5px;
           animation: blink-animation 0.1s steps(2, start) infinite;
           -webkit-animation: blink-animation 1s steps(5, start) infinite;
@@ -162,11 +162,17 @@
 @keyframes blink-animation {
   0% {
     opacity: 1;
+    width: 10px;
+    height: 10px;
   }
   50% {
     opacity: 0;
+    width: 0px;
+    height: 0px;
   }
   100% {
     opacity: 1;
+    width: 10px;
+    height: 10px;
   }
 }

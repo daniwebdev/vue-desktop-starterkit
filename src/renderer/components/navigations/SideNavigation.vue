@@ -123,6 +123,13 @@ export default {
               },
             },
             {
+              name: "Button",
+              icon: "fas fa-form",
+              route: {
+                name: "ui.button"
+              },
+            },
+            {
               name: "Card",
               icon: "fas fa-form",
               route: {

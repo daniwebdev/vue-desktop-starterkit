@@ -9,4 +9,9 @@ export const routes = [
         name: "ui.card",
         component: () => import("@/renderer/views/ui-kit/Card.vue"),
     },
+    {
+        path: "ui/button",
+        name: "ui.button",
+        component: () => import("@/renderer/views/ui-kit/Button.vue"),
+    },
 ];
