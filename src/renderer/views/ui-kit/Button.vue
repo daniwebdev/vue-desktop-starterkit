@@ -1,16 +1,37 @@
 <template>
-    <div class="p-2 grid grid-cols-3 gap-3">
+    <div class="p-2 grid grid-cols-2 gap-3">
         <div>
-            <button primary>
+            <button class="btn btn-primary">
                 Primary
             </button>
-            <button success>
+            <button class="btn btn-secondary">
+                Secondary
+            </button>
+            <button class="btn btn-success">
                 Success
             </button>
-            <button warning>
+            <button class="btn btn-warning">
                 Warning
             </button>
-            <button danger>
+            <button class="btn btn-danger">
+                Danger
+            </button>
+        </div>
+
+        <div>
+            <button class="btn btn-primary" disabled>
+                Primary
+            </button>
+            <button class="btn btn-secondary" disabled>
+                secondary
+            </button>
+            <button class="btn btn-success" disabled>
+                Success
+            </button>
+            <button class="btn btn-warning" disabled>
+                Warning
+            </button>
+            <button class="btn btn-danger" disabled>
                 Danger
             </button>
         </div>

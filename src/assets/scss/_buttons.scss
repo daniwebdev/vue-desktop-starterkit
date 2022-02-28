@@ -1,43 +1,11 @@
 .btn {
-    @apply px-3 py-2 rounded-md;
-    &.btn-primary {
-        background: $primary-color;
-        color: #fff;
-        &:hover {
-            background: darken($color: $primary-color, $amount: 10%);
-            color: #fff;
-        }
+    @apply px-3 py-2 rounded-md text-white;
+    &.btn-sm {
+        @apply px-2 py-1 text-sm;
     }
-    &.btn-secondary {
-        background: $secondary-color;
-        color: #fff;
-        &:hover {
-            background: darken($color: $secondary-color, $amount: 10%);
-            color: #fff;
-        }
-    }
-    &.btn-success {
-        background: $success-color;
-        color: #fff;
-        &:hover {
-            background: darken($color: $success-color, $amount: 10%);
-            color: #fff;
-        }
-    }
-    &.btn-warning {
-        background: $warning-color;
-        color: #fff;
-        &:hover {
-            background: darken($color: $warning-color, $amount: 10%);
-            color: #fff;
-        }
-    }
-    &.btn-danger {
-        background: $danger-color;
-        color: #fff;
-        &:hover {
-            background: darken($color: $danger-color, $amount: 10%);
-            color: #fff;
-        }
+
+    &:disabled {
+        @apply opacity-50;
+        cursor: not-allowed;
     }
 }
