@@ -2,7 +2,7 @@
   <!-- Footer -->
   <div class="bottom-navigation">
     <div>
-        <i class="fa fa-link fa-spin" aria-hidden="true"></i> {{ current_path }}
+        <i class="fa fa-link" aria-hidden="true"></i> {{ current_path }}
     </div>
     <div class="flex flex-row side-right">
       <div class="clock">

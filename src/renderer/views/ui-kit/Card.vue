@@ -67,8 +67,9 @@
         <h2>2345</h2>
         <small>
           <span class="text-green-600">
-          <i class="fa fa-caret-up " aria-hidden="true"></i> +40%  
-          </span> then last week
+            <i class="fa fa-caret-up" aria-hidden="true"></i> +40%
+          </span>
+          then last week
         </small>
       </div>
       <div class="widget-icon">
@@ -82,8 +83,9 @@
         <h2>344</h2>
         <small>
           <span class="text-red-600">
-          <i class="fa fa-caret-down " aria-hidden="true"></i> -2%  
-          </span> then last week
+            <i class="fa fa-caret-down" aria-hidden="true"></i> -2%
+          </span>
+          then last week
         </small>
       </div>
       <div class="widget-icon">
@@ -101,7 +103,6 @@
       </div>
     </div>
 
-
     <div class="widget">
       <div class="widget-content">
         <h1>Visitors</h1>
@@ -112,17 +113,76 @@
       </div>
     </div>
 
-    <!-- Widget Progress Bar -->
-    <div class="widget col-span-2">
+    <div class="widget">
       <div class="widget-content">
-        <span class="text-lg">
-          Actual Revenue vs Target Revenue
-        </span>
+        <h1>Products</h1>
+        <h2>344</h2>
+      </div>
+      <div class="widget-icon">
+        <div
+          class="flex justify-center items-center bg-info rounded-full"
+          style="width: 70px; height: 70px; font-size: 30px"
+        >
+          <i class="fa fa-box"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="widget">
+      <div class="widget-content">
+        <h1>Registers</h1>
+        <h2>344</h2>
+      </div>
+      <div class="widget-icon">
+        <div
+          class="flex justify-center items-center bg-success rounded-full"
+          style="width: 70px; height: 70px; font-size: 30px"
+        >
+          <i class="fa fa-users"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="widget">
+      <div class="widget-content">
+        <h1>Uninstall</h1>
+        <h2>344</h2>
+      </div>
+      <div class="widget-icon">
+        <div
+          class="flex justify-center items-center bg-danger rounded-full"
+          style="width: 70px; height: 70px; font-size: 30px"
+        >
+        <i class="fas fa-user-alt-slash"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="widget">
+      <div class="widget-content">
+        <h1>Uninstall</h1>
+        <h2>344</h2>
+      </div>
+      <div class="widget-icon">
+        <div
+          class="flex justify-center items-center bg-danger rounded-full"
+          style="width: 70px; height: 70px; font-size: 30px"
+        >
+        <i class="fas fa-user-alt-slash"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid grid-cols-2 p-3 gap-3">
+    <!-- Widget Progress Bar -->
+    <div class="widget">
+      <div class="widget-content">
+        <span class="text-lg"> Actual Revenue vs Target Revenue </span>
         <div class="my-5">
           <div class="flex justify-between">
-            <span>
-              Target Achievement
-            </span>
+            <span> Target Achievement </span>
             <span class="text-green-600">
               <i class="fa fa-caret-up" aria-hidden="true"></i> +90%
             </span>
@@ -134,30 +194,22 @@
 
         <div class="flex justify-between">
           <div>
-            <span>
-              Actual Revenue
-            </span>
+            <span> Actual Revenue </span>
             <h5 class="text-xl">$50,000</h5>
           </div>
           <div>
-            <span>
-              Target Revenue
-            </span>
+            <span> Target Revenue </span>
             <h5 class="text-xl">$50,000</h5>
           </div>
         </div>
       </div>
     </div>
-    <div class="widget col-span-2">
+    <div class="widget">
       <div class="widget-content">
-        <span class="text-lg">
-          Actual Revenue vs Target Revenue
-        </span>
+        <span class="text-lg"> Actual Revenue vs Target Revenue </span>
         <div class="my-5">
           <div class="flex justify-between">
-            <span>
-              Target Achievement
-            </span>
+            <span> Target Achievement </span>
             <span class="text-red-600">
               <i class="fa fa-caret-up" aria-hidden="true"></i> +90%
             </span>
@@ -169,15 +221,11 @@
 
         <div class="flex justify-between">
           <div>
-            <span>
-              Actual Revenue
-            </span>
+            <span> Actual Revenue </span>
             <h5 class="text-xl">$50,000</h5>
           </div>
           <div>
-            <span>
-              Target Revenue
-            </span>
+            <span> Target Revenue </span>
             <h5 class="text-xl">$50,000</h5>
           </div>
         </div>
@@ -190,16 +238,25 @@
       <div class="card-header">
         <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
           <li class="nav-item">
-            <button data-target="#custom-tab-home" class="nav-link active" >Home</button>
+            <button data-target="#custom-tab-home" class="nav-link active">
+              Home
+            </button>
           </li>
-           <li class="nav-item">
-            <button  data-target="#custom-tab-message" class="nav-link">Message</button>
+          <li class="nav-item">
+            <button data-target="#custom-tab-message" class="nav-link">
+              Message
+            </button>
           </li>
         </ul>
       </div>
       <div class="card-body">
         <div class="tab-content" id="custom-tabs-four-tabContent">
-          <div class="tab-pane fade show" id="custom-tab-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
+          <div
+            class="tab-pane fade show"
+            id="custom-tab-home"
+            role="tabpanel"
+            aria-labelledby="custom-tabs-four-home-tab"
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
             malesuada lacus ullamcorper dui molestie, sit amet congue quam
             finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio
@@ -214,7 +271,12 @@
             condimentum at, semper vitae lectus. Cras lacinia erat eget sapien
             porta consectetur.
           </div>
-          <div class="tab-pane fade" id="custom-tab-message" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
+          <div
+            class="tab-pane fade"
+            id="custom-tab-message"
+            role="tabpanel"
+            aria-labelledby="custom-tabs-four-profile-tab"
+          >
             Mauris tincidunt mi at erat gravida, eget tristique urna bibendum.
             Mauris pharetra purus ut ligula tempor, et vulputate metus
             facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -228,111 +290,33 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <style lang="scss">
 .nav {
   margin-bottom: -1px;
-    &.nav-tabs {
-        .nav-item {
-            @apply mr-2 inline-block mt-3;
-            
-            .nav-link, button {
-              @apply outline-none;
-                @apply border dark:border-gray-700 p-3 rounded-t-lg;
-                border-bottom: 0;
-                &.active {
-                    @apply bg-gray-900;
-                }
-            }
+  &.nav-tabs {
+    .nav-item {
+      @apply mr-2 inline-block mt-3;
+
+      .nav-link,
+      button {
+        @apply outline-none;
+        @apply border dark:border-gray-700 p-3 rounded-t-lg;
+        border-bottom: 0;
+        &.active {
+          @apply bg-gray-900;
         }
+      }
     }
+  }
 }
 .tab-content {
-    @apply p-1;
-    .tab-pane {
-        @apply hidden;
-        &.show {
-            @apply block;
-        }
-    }
-}
-.card {
-  @apply rounded-sm rounded-lg shadow-md;
-  @apply bg-white;
-  @apply dark:bg-gray-900;
-
-  &.card-nav {
-    .card-header {
-      @apply border-b;
-      padding: 0px 10px !important;
-    }
-  }
-  .card-header {
-    padding: 1rem;
-    @apply rounded-t-lg;
-    @apply bg-gray-200;
-    @apply text-gray-700;
-    @apply font-semibold;
-    @apply text-sm;
-
-    @apply dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700;
-  }
-
-  .card-body {
-    @apply p-3;
-
-    @apply dark:text-gray-500;
-    @apply font-normal;
-    @apply text-sm rounded-b-lg;
-  }
-  .card-footer {
-    @apply p-3 rounded-b-lg;
-    @apply bg-gray-200;
-    @apply text-gray-700;
-    @apply font-semibold;
-    @apply text-sm;
-
-    @apply dark:bg-gray-800 dark:text-gray-200 border-t dark:border-gray-700;
-  }
-}
-
-//
-.widget {
-  @apply flex p-4 rounded-lg;
-  @apply text-gray-700 bg-gray-200;
-  @apply dark:bg-gray-900 dark:text-gray-200;
-
-  .widget-content {
-    @apply flex-1;
-    // @apply font-semibold;
-    @apply text-sm;
-
-    h1 {
-      @apply text-lg;
-    }
-
-    h2 {
-      @apply text-4xl;
-    }
-  }
-  .widget-icon {
-    @apply flex;
-    @apply justify-center;
-    @apply items-center;
-    @apply text-center;
-    @apply font-semibold;
-    @apply text-sm;
-    min-width: 100px;
-    width: 100px;
-    font-size: 3rem;
-    transition: all 0.2s ease;
-    @apply dark:bg-gray-900 dark:text-gray-500;
-  }
-  &:hover {
-    .widget-icon {
-      font-size: 3.3rem;
+  @apply p-1;
+  .tab-pane {
+    @apply hidden;
+    &.show {
+      @apply block;
     }
   }
 }
@@ -340,22 +324,23 @@
 
 <script>
 export default {
-    mounted() {
-        document.querySelectorAll('.nav .nav-link').forEach(el => {
-            el.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector('.nav .nav-link.active').classList.remove('active');
-                this.classList.add('active');
-                // open tab
-                document.querySelectorAll('.tab-pane.show').forEach(el => {
-                    el.classList.remove('show');
-                });
-                var target = document.querySelector(this.getAttribute('data-target'));
+  mounted() {
+    document.querySelectorAll(".nav .nav-link").forEach((el) => {
+      el.addEventListener("click", function (e) {
+        e.preventDefault();
+        document
+          .querySelector(".nav .nav-link.active")
+          .classList.remove("active");
+        this.classList.add("active");
+        // open tab
+        document.querySelectorAll(".tab-pane.show").forEach((el) => {
+          el.classList.remove("show");
+        });
+        var target = document.querySelector(this.getAttribute("data-target"));
 
-                target.classList.add('show');
-
-            })
-        })
-    }
-}
+        target.classList.add("show");
+      });
+    });
+  },
+};
 </script>

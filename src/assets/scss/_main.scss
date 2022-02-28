@@ -56,3 +56,28 @@ main {
     width: 100vw;
     transition: all 0.2s ease-in-out; 
 }
+
+
+.right-menus {
+
+    position: fixed;
+    right: 0;
+    top: $top-nav-height;
+
+    bottom: 0;
+    height: $main-height;
+    width: 400px;
+    background: #fff;
+    z-index: 100;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all .3s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    transform: translateX(400px);
+
+    &.active {
+        transform: translateX(0px);
+    }
+     
+    @apply border-l dark:border-gray-800 shadow-xl;
+  }

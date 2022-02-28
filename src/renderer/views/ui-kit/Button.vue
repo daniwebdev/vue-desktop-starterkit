@@ -1,6 +1,9 @@
 <template>
     <div class="p-2 grid grid-cols-2 gap-3">
         <div>
+            <h1 class="text-lg font-semibold mb-2">
+                Default Button
+            </h1>
             <button class="btn btn-primary">
                 Primary
             </button>
@@ -19,6 +22,9 @@
         </div>
 
         <div>
+            <h1 class="text-lg font-semibold mb-2">
+                Disabled Button
+            </h1>
             <button class="btn btn-primary" disabled>
                 Primary
             </button>
@@ -37,6 +43,11 @@
         </div>
 
         <div>
+
+            <h1 class="text-lg font-semibold mb-2">
+                Button with Sizing
+            </h1>
+
             <button primary sm>
                 Primary
             </button>
@@ -52,6 +63,12 @@
         </div>
 
         <div>
+
+            <h1 class="text-lg font-semibold mb-2">
+                Button group
+            </h1>
+
+
             <div btn-group>
                 <button primary>
                     Primary

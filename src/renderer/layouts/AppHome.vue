@@ -33,9 +33,22 @@
   </main>
 
   <bottom-navigation></bottom-navigation>
+
+  <div class="right-menus active dark:bg-black">
+    <div class="text-gray-500 border-b dark:border-gray-700 py-4 px-3">
+      <h1 class="text-lg font-semibold">Lorem ipsum dolor sit amet.</h1>
+      <p class="text-sm">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, quidem.
+      </p>
+      <button class="btn btn-primary text-sm mt-3">
+        Apply
+      </button>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
+
 
   .context-menu {
     @apply bg-white rounded;

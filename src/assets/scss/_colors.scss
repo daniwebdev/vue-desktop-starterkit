@@ -31,5 +31,9 @@ $colors: (
     &:hover {
       background-color: darken($value, 10%) !important;
     }
+
+    &:hover:disabled {
+      background-color: $value !important;
+    }
   }
 }
