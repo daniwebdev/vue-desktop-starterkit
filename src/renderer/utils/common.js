@@ -69,3 +69,28 @@ export const initContextMenu = () => {
 
   document.documentElement.addEventListener("click", hideContextMenu);
 };
+
+
+/*
+  functino for init file upload component
+*/
+export const initFileUpload = (container=null) => {
+  
+  container.querySelectorAll(".form-file").forEach(el => {
+    el.addEventListener("click", () => {
+      // this.querySelector('input[type="file"]').click();
+      // let _target = e.target;
+      let _target = el;
+      console.log(_target.classList);
+      _target.querySelector('input[type="file"]').click();
+
+      _target.querySelector('input[type="file"]').addEventListener("change", function (eF) {
+          // console.log(eF.target.files);
+          let file_url = URL.createObjectURL(eF.target.files[0]);
+
+          _target.style.backgroundImage = `url(${file_url})`;
+          _target.style.backgroundSize = "cover";
+        });
+    });
+  })
+}

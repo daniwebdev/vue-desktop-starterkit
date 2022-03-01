@@ -81,10 +81,15 @@
           </div>
 
           <div class="col-span-2">
-            <div class="grid gap-4 grid-cols-3">
+            <div class="grid gap-4 grid-cols-3" id="file_upload">
               <div class="form-group form-file">
                 <i class="fas fa-upload mb-3"></i>
                 <label class="">Identity Card</label>
+                <input type="file" name="" id="" hidden />
+              </div>
+              <div class="form-group form-file">
+                <i class="fas fa-upload mb-3"></i>
+                <label class="">Other Document</label>
                 <input type="file" name="" id="" hidden />
               </div>
             </div>
@@ -106,23 +111,17 @@
 
 <script>
 import InputText from '@/renderer/components/elements/form/InputText.vue'
+import { initFileUpload } from '@/renderer/utils/common.js'
 
 export default {
   components: {
     InputText
   },
   mounted() {
-    document.querySelector(".form-file").addEventListener("click", (e) => {
-      // this.querySelector('input[type="file"]').click();
-      e.target.querySelector('input[type="file"]').click();
 
-      e.target
-        .querySelector('input[type="file"]')
-        .addEventListener("change", function (eF) {
-          console.log(eF.target.files);
-        });
-    });
-  },
+    initFileUpload(document.querySelector('#file_upload'));
+
+},
 };
 </script>
 

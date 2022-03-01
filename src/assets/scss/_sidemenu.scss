@@ -40,7 +40,8 @@
             .submenu {
                 // display: block;
                 opacity: 1;
-                left: $side-nav-width;
+                visibility: visible;
+                // left: $side-nav-width;
             }
         }
         a {
@@ -57,7 +58,9 @@
             margin: 0;
             padding: 0;
             transition: all 0.2s ease-in;
-            left: -200px;
+            // left: -200px;
+            left: $side-nav-width;
+            visibility: hidden;
             opacity: 0;
             top: 0;
             width: 200px;

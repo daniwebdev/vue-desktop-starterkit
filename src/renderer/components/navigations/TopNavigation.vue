@@ -18,6 +18,7 @@
       </svg>
     </div>
 
+    <!-- Route Navigation (Prev, Next) -->
     <div class="flex-none">
       <div class="app-nav px-3">
         <button class="prev-nav-btn" @click="toggleBack()">
@@ -29,10 +30,12 @@
         </button>
       </div>
     </div>
+    <!-- Screen Title -->
     <div class="flex-1 top-nav-center">
       {{ pageTitle }}
     </div>
 
+    <!-- Right Section (Search, Notification, App Window, etc) -->
     <div class="flex-none flex items-center">
       
       <div class="top-nav-menus flex items-center">
@@ -67,12 +70,12 @@
           <!-- <div class="top-nav-divider"></div> -->
 
         <ul class="menu-container">
-          <li>
+          <li @click.prevent="toggleSideRight('activities-list')">
             <router-link to="#" class="text-sm">
               <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
             </router-link>
           </li>
-          <li>
+          <li @click.prevent="toggleSideRight('notification-list')">
             <router-link to="#" class="text-sm">
               <!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
               <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
@@ -113,18 +116,44 @@
   </nav>
 
   <alert :show="alert_close_app"></alert>
+
+
+  <side-right id="notification-list">
+    <div class="text-gray-500 border-b dark:border-gray-700 py-4 px-3">
+      <h1 class="text-lg font-semibold">Notivication.</h1>
+      <p class="text-sm">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
+        quidem.
+      </p>
+      <button class="btn btn-primary text-sm mt-3">Apply</button>
+    </div>
+  </side-right>
+
+  <side-right id="activities-list">
+    <div class="text-gray-500 border-b dark:border-gray-700 py-4 px-3">
+      <h1 class="text-lg font-semibold">Activities.</h1>
+      <p class="text-sm">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
+        quidem.
+      </p>
+      <button class="btn btn-primary text-sm mt-3">Apply</button>
+    </div>
+  </side-right>
+  
 </template>
 
 <script>
 
 import Alert from '../partial/Alert.vue';
+import SideRight from '../partial/SideRight.vue';
 
 import {searchToggleSuggestion} from "@/renderer/utils/common";
 
 export default {
 
   components: {
-    Alert
+    Alert,
+    SideRight,
   },
   data() {
     return {
@@ -155,6 +184,27 @@ export default {
     onCloseApp() {
       document.querySelector('.alert').classList.toggle('hidden');
     },
+
+    toggleSideRight(id) {
+      // document.querySelectorAll('.overlay-side-right').forEach(el => {
+      //   el.classList.add('hidden');
+      // });
+
+      document.querySelectorAll('.right-menus').forEach(el => {
+        
+        let elementID = el.getAttribute('id');
+        
+        elementID != id ? el.classList.remove('active') : el.classList.toggle('active');
+
+        // if(elementID.classList.contains('active')) {
+        //   document.getElementById('overlay_' + elementID).classList.remove('hidden');
+        // } else {
+        //   document.getElementById('overlay_' + elementID).classList.add('hidden');
+        // }
+        
+      });
+    },
+
   },
   mounted() {
     searchToggleSuggestion();

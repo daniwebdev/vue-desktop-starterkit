@@ -175,6 +175,7 @@
 
   </div>
 
+  <!-- Widget Progress Bar -->
   <div class="grid grid-cols-2 p-3 gap-3">
     <!-- Widget Progress Bar -->
     <div class="widget">
@@ -233,6 +234,21 @@
     </div>
   </div>
 
+  <div class="grid grid-cols-3 p-3 gap-2">
+    <div class="widget">
+      <div class="widget-content">
+        <h4 class="text-5xl">
+          12:32:43
+        </h4>
+        <h5 class="text-md">
+          <i class="fa fa-clock" aria-hidden="true"></i>
+          Monday, 5th of July, 2020
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB -->
   <div class="grid grid-cols-2 p-4">
     <div class="card card-nav">
       <div class="card-header">
