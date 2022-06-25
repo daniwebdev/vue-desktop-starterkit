@@ -1,8 +1,15 @@
 import { createStore } from "vuex";
+import createPersistedState from "vuex-persistedstate";
+
+
+const dataState = createPersistedState({
+    paths: ['data']
+  })
 
 export default createStore({
+    // modules: modules,
+    plugins: [dataState],
     state() {
-        
         return {
             title: "Home - Desktop",
             darkMode: false,
@@ -24,4 +31,9 @@ export default createStore({
             }
         },
     },
-})
+    actions: {
+        setTitle(context, title) {
+            context.commit('set_title', title)
+        }
+    }
+});
